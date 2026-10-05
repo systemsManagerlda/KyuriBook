@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+:root {
+  --kyuri-navy: #08265f;
+  --kyuri-blue: #087fe8;
+  --kyuri-cyan: #11b5e4;
+  --kyuri-orange: #ff8a00;
+  --kyuri-yellow: #ffb51b;
+  --ink: #10213f;
+  --muted: #6b7892;
+  --surface: #ffffff;
+  --soft: #f5f8fc;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--soft);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection { background: #d8efff; color: var(--kyuri-navy); }
+
+.hero-grid {
+  background-image: linear-gradient(rgba(8,38,95,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(8,38,95,.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.glass { background: rgba(255,255,255,.82); backdrop-filter: blur(18px); }
+
+.book-card { transition: transform .22s ease, box-shadow .22s ease; }
+.book-card:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(8,38,95,.12); }
+
+.cover-frame { aspect-ratio: 3 / 4; overflow: hidden; background: #eef3f9; }
+.cover-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.book-card:hover .cover-frame img { transform: scale(1.035); }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+@media (max-width: 640px) {
+  .hero-title { font-size: 2.55rem; line-height: 1.02; }
+}
